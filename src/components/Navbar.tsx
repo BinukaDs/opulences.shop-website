@@ -34,7 +34,7 @@ const Navbar = () => {
                     </div>
                     <div className="flex items-center justify-between gap-6">
                         <Button>View Pricing</Button>
-                        <button className="border border-slate-400 rounded-lg p-1"><Image width="32" height="32" src="https://img.icons8.com/windows/32/FFFFFF/menu--v1.png" alt="menu--v1"/></button>
+                        <button className=" rounded-lg p-1 border border-border"><Image width="32" height="32" src="https://img.icons8.com/windows/32/FFFFFF/menu--v1.png" alt="menu--v1"/></button>
                     </div>
                 </div>
             </div>

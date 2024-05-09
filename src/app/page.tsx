@@ -1,4 +1,3 @@
-import Image from "next/image";
 import HeroSection from "@/components/sections/HeroSection";
 import IntroSection from "@/components/sections/IntroSection";
 import AboutSection from "@/components/sections/AboutSection";
@@ -15,6 +14,7 @@ export default function Home() {
       <IntroSection />
       <AboutSection />
       <NichesSection />
+      <SliderSection />
       <WhyUsSection />
       <PricingSection />
       <ContactSection />
