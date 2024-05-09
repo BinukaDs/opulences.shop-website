@@ -6,6 +6,7 @@ import NichesSection from "@/components/sections/NichesSection";
 import WhyUsSection from "@/components/sections/WhyUsSection";
 import PricingSection from "@/components/sections/PricingSection";
 import ContactSection from "@/components/sections/ContactSection";
+import TextScroll from "@/components/sections/TextScroll";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <WhyUsSection />
       <PricingSection />
       <ContactSection />
+      <TextScroll />
     </main>
   );
 }

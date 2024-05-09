@@ -4,7 +4,7 @@ import FadeIn from "@/app/transitions/FadeIn"
 import TopicFade from "@/app/transitions/TopicFade"
 const ContactSection = () => {
     return (
-        <section className='py-24 bg-background flex flex-col items-center h-full w-full xl:px-48 rounded-b-3xl border border-b-border'>
+        <section className='py-24 bg-background flex flex-col items-center h-full w-full xl:px-48 '>
             <div className="container">
                 <div className="flex flex-col gap-12 justify-between items-center">
                     <TopicFade>

@@ -17,7 +17,7 @@ const SliderSection = () => {
     return () => clearInterval(interval);
   }, []);
   return (
-    <section className='w-full md:p-24 bg-background'>
+    <section className='w-full md:p-24 py-12 bg-background'>
       <div className='container fade-sides'>
         <div className="gallery overflow-hidden whitespace-nowrap transition-all" >
           <div className="scrolling-wrapper flex justify-between gap-12 animate-scroll">
