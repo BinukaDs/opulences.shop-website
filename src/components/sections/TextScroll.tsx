@@ -20,7 +20,7 @@ const TextScroll = () => {
     <section className='w-full md:p-24 py-12 bg-background rounded-b-3xl border border-b-border'>
       <div className='container fade-sides'>
         <div className="gallery overflow-hidden whitespace-nowrap transition-all" >
-          <div className="scrolling-wrapper font-bold text-6xl text-textMuted flex justify-between gap-12 animate-scroll">
+          <div className="scrolling-wrapper-text font-bold text-6xl text-textMuted flex justify-between gap-12 animate-scrollRight">
             <h1>OPULENCE</h1>
             <h1>OPULENCE</h1>
             <h1>OPULENCE</h1>
