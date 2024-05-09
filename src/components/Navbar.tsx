@@ -3,7 +3,7 @@ import Image from "next/image"
 
 const Navbar = () => {
     return (
-        <nav className="py-5 bg-foreground">
+        <nav className="py-5 bg-foreground ">
             <div className="container">
                 {/* desktop navbar */}
                 <div className="justify-between hidden md:flex items-center xl:px-24">

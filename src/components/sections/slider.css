@@ -12,3 +12,28 @@
     0% { transform: translateX(0); }
     100% { transform: translateX(-100%); }
 }
+
+.container.fade-sides {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container.fade-sides::before,
+  .container.fade-sides::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 50px;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  .container.fade-sides::before {
+    left: 0;
+    background: linear-gradient(to right, #0E0E0E, #1F1F1F,#111111, transparent);
+  }
+
+  .container.fade-sides::after {
+    right: 0;
+    background: linear-gradient(to left, #0E0E0E, #1F1F1F, transparent);
+  }

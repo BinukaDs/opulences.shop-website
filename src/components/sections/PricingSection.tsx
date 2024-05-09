@@ -18,7 +18,7 @@ const PricingSection = () => {
 
                     ) : (
                         <div className="rounded-full flex justify-center items-center bg-slate-400 bg-opacity-20 p-2 ">
-                            <Image src={"https://img.icons8.com/ios-glyphs/30/A19C97/checkmark--v1.png"} alt="web icon" width={24} height={24} />
+                            <Image src={"https://img.icons8.com/ios-glyphs/30/000000/checkmark--v1.png"} alt="web icon" width={24} height={24} />
                         </div>
                     )}
                     <div>
@@ -84,7 +84,7 @@ const PricingSection = () => {
                             <FadeIn>
                                 <Card className="bg-linen flex flex-col p-2 border border-border">
                                     <CardHeader className="flex justify-start items-start">
-                                        <div className="rounded-full bg-textGray p-2">
+                                        <div className="rounded-full bg-slate-400 bg-opacity-20 p-2">
                                             <Image src={"https://img.icons8.com/ios-filled/50/000000/quick-mode-on--v1.png"} alt="web icon" width={30} height={30} />
                                         </div>
                                     </CardHeader>

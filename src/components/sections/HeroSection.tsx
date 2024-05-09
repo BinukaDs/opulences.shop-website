@@ -4,7 +4,7 @@ import TopicFade from "@/app/transitions/TopicFade"
 import FadeIn from "@/app/transitions/FadeIn"
 const HeroSection = () => {
     return (
-        <section className='rounded-b-3xl h-full md:py-24 flex items-center w-full bg-foreground'>
+        <section className='rounded-b-3xl h-full md:py-24 flex items-center w-full bg-foreground border-b'>
             <div className='container'>
                 <div className="md:flex hidden flex-col justify-between gap-6 h-full xl:px-24">
                     <div>

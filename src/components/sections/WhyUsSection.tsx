@@ -14,11 +14,13 @@ const WhyUsSection = () => {
                         </div>
                     </TopicFade>
                     <FadeIn>
-                        <div className='flex md:flex-row flex-col justify-between w-full items-baseline h-full gap-12'>
-                            <FeatureTag src={"https://img.icons8.com/ios/50/FFFFFF/accuracy--v1.png"} title={"Focus On Results"} description={"We prioritize building a store that gets you sales."} />
-                            <FeatureTag src={"https://img.icons8.com/ios/50/FFFFFF/time_2.png"} title={"Fast Turnarounds"} description={"Get your store up and running in a flash!"} />
-                            <FeatureTag src={"https://img.icons8.com/ios/50/FFFFFF/time_2.png"} title={"Human Touch"} description={"Get your store up and running in a flash!"} />
-                            <FeatureTag src={"https://img.icons8.com/ios/50/FFFFFF/low-price.png"} title={"Affordable Price"} description={"Launch your business without breaking the bank!"} />
+                        <div className="flex items-center justify-center h-full bg-foreground border border-border rounded-3xl p-12 ">
+                            <div className='flex md:flex-row flex-col gap-12 '>
+                                <FeatureTag src={"https://img.icons8.com/ios/50/FFFFFF/accuracy--v1.png"} title={"Focus On Results"} description={"We prioritize building a store that gets you sales."} />
+                                <FeatureTag src={"https://img.icons8.com/ios/50/FFFFFF/time_2.png"} title={"Fast Turnarounds"} description={"Get your store up and running in a flash!"} />
+                                <FeatureTag src={"https://img.icons8.com/ios/50/FFFFFF/trust--v1.png"} title={"Human Touch"} description={"Expect personalized service and attention to detail."} />
+                                <FeatureTag src={"https://img.icons8.com/ios/50/FFFFFF/low-price.png"} title={"Affordable Price"} description={"Launch your business without breaking the bank!"} />
+                            </div>
                         </div>
                     </FadeIn>
 
