@@ -1,7 +1,7 @@
 'use client'
 import { motion, AnimatePresence } from 'framer-motion'
 
-const TopicFade = ({ children }) => {
+const TopicFade = ({ children }:any) => {
     return (
         <AnimatePresence >
             <motion.div

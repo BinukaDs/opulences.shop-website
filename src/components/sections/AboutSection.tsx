@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader } from "../ui/card"
 import TopicFade from "@/app/transitions/TopicFade"
-import FadeIn from "@/app/transitions/fadein"
+import FadeIn from "@/app/transitions/FadeIn"
 const AboutSection = () => {
     return (
         <section className='bg-background flex flex-col items-center  w-full xl:px-24'>

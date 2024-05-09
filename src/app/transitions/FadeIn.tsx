@@ -1,7 +1,7 @@
 'use client'
 import { motion, AnimatePresence } from 'framer-motion'
 
-const FadeIn = ({ children }) => {
+const FadeIn = ({ children }: any) => {
     return (
         <AnimatePresence >
             <motion.div
@@ -13,7 +13,7 @@ const FadeIn = ({ children }) => {
                     ease: [0, 0.71, 0.2, 1.01]
                 }}
 
-             viewport={{ once: true}}
+                viewport={{ once: true }}
             >
                 {children}
             </motion.div>

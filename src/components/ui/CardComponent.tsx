@@ -1,7 +1,7 @@
 
 import { Card, CardContent, CardHeader, CardDescription, CardTitle, CardFooter } from "../ui/card"
 import Image from "next/image"
-import FadeIn from "@/app/transitions/fadein"
+import FadeIn from "@/app/transitions/FadeIn"
 
 const CardComponent = ({ title, description, href }: any) => {
     return (

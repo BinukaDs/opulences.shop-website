@@ -43,8 +43,8 @@ const PricingSection = () => {
                     <div className="flex flex-col md:flex-row justify-center items-start w-full gap-24">
                         <div className="w-full h-full">
                             <FadeIn>
-                                <Card className="bg-foreground border border-border flex flex-col items-center p-2 h-full">
-                                    <CardHeader className="flex justify-start">
+                                <Card className="bg-foreground border border-border flex flex-col  p-2 h-full">
+                                    <CardHeader className="flex justify-start items-start">
                                         <div className="rounded-full border border-textGray p-2">
                                             <Image src={"https://img.icons8.com/ios-filled/50/d0d0d0/quick-mode-on--v1.png"} alt="web icon" width={30} height={30} />
                                         </div>
@@ -82,8 +82,8 @@ const PricingSection = () => {
 
                         <div className="w-full h-full">
                             <FadeIn>
-                                <Card className="bg-linen flex flex-col items-center p-2 border border-border">
-                                    <CardHeader className="flex justify-start">
+                                <Card className="bg-linen flex flex-col p-2 border border-border">
+                                    <CardHeader className="flex justify-start items-start">
                                         <div className="rounded-full bg-textGray p-2">
                                             <Image src={"https://img.icons8.com/ios-filled/50/000000/quick-mode-on--v1.png"} alt="web icon" width={30} height={30} />
                                         </div>
