@@ -30,7 +30,7 @@ const ContactSection = () => {
                                 </div>
                                 <div className="flex flex-col  justify-between h-full items-center md:items-start gap-12">
                                     <h1 className='text-3xl font-bold text-center md:text-start'>Join Our Discord Community to Discover Ideas!</h1>
-                                    <a href="https://discord.gg/9cmZVr8KMf" target="_blank"><Button className="bg-white w-full hover:bg-white/5 bg-opacity-10 text-white text-md" size={"lg"}>Join the Community</Button></a>
+                                    <Button className="bg-white w-full hover:bg-white/5 bg-opacity-10 text-white text-md" size={"lg"}>Join the Community</Button>
                                 </div>
                             </div>
                         </div>

@@ -10,7 +10,7 @@ import TextScroll from "@/components/sections/TextScroll";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between sticky z-20 ">
+    <main className="flex min-h-screen  flex-col items-center justify-between sticky z-20 ">
       <HeroSection />
       <IntroSection />
       <AboutSection />

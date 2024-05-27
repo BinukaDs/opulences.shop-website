@@ -81,9 +81,6 @@ const config = {
         "scrollLeft": 'scrollLeft 10s linear infinite',
         "scrollRight": 'scrollRight 10s linear infinite',
       },
-      fontFamily: {
-        "Cinzel": ['var(--font-Cinzel)'],
-      }
       
     },
   },
