@@ -9,7 +9,7 @@ dotenv.config();
 import "./slider.css"
 
 const PricingSection = () => {
-    const BASEURL = "http://localhost:3001"
+    const BASEURL = "https://opulences-backend.vercel.app"
     const purchase = (e: any) => {
         let item: { id: number; price: number; name: string }[] = []
         const id = e.target.id
