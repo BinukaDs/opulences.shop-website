@@ -273,5 +273,9 @@ app.get("/success", (req, res) => {
   }
 });
 
+app.get("/", (req, res) => {
+  res.send("Hello from server!");
+})
+
 // app.use(bodyParser.raw());
 app.listen(3001);
