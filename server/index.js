@@ -19,7 +19,7 @@ function generateSecret() {
 app.use(bodyParser.raw());
 app.use(
   cors({
-    origin: `${CLIENT_URL}`,
+    origin: `https://opulences.vercel.app/`,
     methods: ["POST", "GET"],
     credentials: true,
   })
