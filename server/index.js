@@ -20,6 +20,8 @@ app.use(bodyParser.raw());
 app.use(
   cors({
     origin: `${CLIENT_URL}`,
+    methods: ["POST", "GET"],
+    credentials: true,
   })
 );
 
