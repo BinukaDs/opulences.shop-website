@@ -4,7 +4,12 @@ import { Button } from "../ui/button"
 import Image from "next/image"
 import TopicFade from "@/app/transitions/TopicFade"
 import FadeIn from "@/app/transitions/FadeIn"
+import dotenv from 'dotenv';
+dotenv.config();
+import "./slider.css"
+
 const PricingSection = () => {
+    const BASEURL = "http://localhost:3001"
     const purchase = (e: any) => {
         let item: { id: number; price: number; name: string }[] = []
         const id = e.target.id
@@ -17,7 +22,9 @@ const PricingSection = () => {
             console.log(item)
         }
 
-        fetch('http://localhost:3001/create-checkout-session/', {
+        console.log("BaseURL: ", BASEURL)
+
+        fetch(`${BASEURL}/create-checkout-session/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -62,7 +69,7 @@ const PricingSection = () => {
     }
 
     return (
-        <section className='py-24 bg-background flex flex-col items-center h-full w-full px-0 xl:px-48'>
+        <section className='py-24 bg-background flex flex-col items-center h-full w-full px-0 xl:px-48' id="pricing">
             <div className="container">
                 <div className="flex flex-col gap-12 justify-between items-center">
                     <TopicFade>
@@ -74,7 +81,7 @@ const PricingSection = () => {
                     <div className="flex flex-col md:flex-row justify-center items-start w-full gap-24">
                         <div className="w-full h-full">
                             <FadeIn>
-                                <Card className="bg-foreground border border-border flex flex-col  p-2 h-full">
+                                <Card className="card-bg border border-border flex flex-col  p-2 h-full">
                                     <CardHeader className="flex justify-start items-start">
                                         <div className="rounded-full border border-textGray p-2">
                                             <Image src={"https://img.icons8.com/ios-filled/50/d0d0d0/quick-mode-on--v1.png"} alt="web icon" width={30} height={30} />

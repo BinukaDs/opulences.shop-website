@@ -2,6 +2,7 @@ import Image from "next/image"
 import FeatureTag from "../ui/FeatureTag"
 import TopicFade from "@/app/transitions/TopicFade"
 import FadeIn from "@/app/transitions/FadeIn"
+import "./slider.css"
 const WhyUsSection = () => {
     return (
         <section className='py-24 bg-background flex flex-col items-center h-full w-full xl:px-12'>
@@ -14,8 +15,8 @@ const WhyUsSection = () => {
                         </div>
                     </TopicFade>
                     <FadeIn>
-                        <div className="flex items-center justify-center h-full bg-foreground border border-border rounded-3xl p-12 ">
-                            <div className='flex md:flex-row flex-col gap-12 '>
+                        <div className="flex items-center justify-center h-full card-bg border border-border rounded-3xl p-12 ">
+                            <div className='lg:flex md:flex-row flex-col gap-12 grid md:grid-cols-2 '>
                                 <FeatureTag src={"https://img.icons8.com/ios/50/FFFFFF/accuracy--v1.png"} title={"Focus On Results"} description={"We prioritize building a store that gets you sales."} />
                                 <FeatureTag src={"https://img.icons8.com/ios/50/FFFFFF/time_2.png"} title={"Fast Turnarounds"} description={"Get your store up and running in a flash!"} />
                                 <FeatureTag src={"https://img.icons8.com/ios/50/FFFFFF/trust--v1.png"} title={"Human Touch"} description={"Expect personalized service and attention to detail."} />

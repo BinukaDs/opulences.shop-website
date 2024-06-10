@@ -3,7 +3,7 @@ import TopicFade from "@/app/transitions/TopicFade"
 import FadeIn from "@/app/transitions/FadeIn"
 const AboutSection = () => {
     return (
-        <section className='bg-background flex flex-col items-center  w-full xl:px-24'>
+        <section className='bg-background flex flex-col items-center  w-full xl:px-24' id="about">
             <div className='container'>
                 <TopicFade>
                     <div className="flex flex-col justify-between gap-3">

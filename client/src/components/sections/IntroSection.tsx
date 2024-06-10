@@ -18,8 +18,8 @@ const IntroSection = () => {
                             <CardComponent title="Branding Essentials" description="Custom Yet Simple Logo and Name Designed For Your Store." href="https://img.icons8.com/ios/50/FFFFFF/design--v1.png" />
                             <CardComponent title="Sales Branding" description="Exceptionally Branded Store To Maximize Sales." href="https://img.icons8.com/ios/50/FFFFFF/commercial--v1.png" />
                             <CardComponent title="Product Launch" description="30+ Winning Products Added To Store to make Sales." href="https://img.icons8.com/ios/50/FFFFFF/launched-rocket.png" />
-                            <CardComponent title="Policy Setup" description="Done For You Policy Pages (Privacy, TOS, Etc..)." href="https://img.icons8.com/material-outlined/24/FFFFFF/terms-and-conditions.png" />
-                            <CardComponent title="Site Organization" description="Done For You Collections, Menus, Contact Pages, Etc.." href="https://img.icons8.com/material-outlined/48/FFFFFF/to-do.png" />
+                            <CardComponent title="Policy Setup" description="Done For You Policy Pages (Privacy, TOS, Etc..)." href="https://img.icons8.com/ios/50/FFFFFF/privacy-policy.png" />
+                            <CardComponent title="Site Organization" description="Done For You Collections, Menus, Contact Pages, Etc.." href="https://img.icons8.com/dotty/80/FFFFFF/layers.png" />
                             <CardComponent title="Product Detailing" description="Done For You Product Description and Product Page." href="https://img.icons8.com/ios/50/FFFFFF/edit--v1.png" />
                         </div>
                     </div>

@@ -7,8 +7,10 @@ const bodyParser = require("body-parser");
 const Buffer = require("buffer");
 const stripe = require("stripe")(process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY);
 const cors = require("cors");
+require("dotenv").config();
 
 const crypto = require("crypto");
+const CLIENT_URL = process.env.CLIENT_URL;
 
 function generateSecret() {
   return crypto.randomBytes(64).toString("hex");
@@ -17,7 +19,7 @@ function generateSecret() {
 app.use(bodyParser.raw());
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: `${CLIENT_URL}`,
   })
 );
 
@@ -112,6 +114,16 @@ async function sendMail({ to, name, subject }, { product, amount }) {
                   border-radius: 5px;
                   margin-top: 20px;
               }
+
+              .button2 {
+                display: inline-block;
+                background-color: #1E1E1E; /* Button color */
+                color: #FFFFFF;
+                text-decoration: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                margin-top: 20px;
+            }
               
               .transaction-details {
                   text-align: center;
@@ -144,7 +156,8 @@ async function sendMail({ to, name, subject }, { product, amount }) {
                 <div><p><strong>Amount:</strong> € ${amount / 100}</p></div>
                 <div><p><strong>Product:</strong> ${product}</p> </div>
               </div>
-              <a href="#" class="button" style="color:#FFFFFF">Join Discord Server</a>
+              <a href="#" class="button" style="color:#FFFFFF">Join Discord Server</a><br />
+              <a href="#" class="button2" style="color:#FFFFFF">Watch Video</a>
           </div>
           <footer style="left: 0; bottom: 0; width: 100%; background-color: #f8f9fa; color: black; text-align: center;">
             <p>Copyright &copy; 2024 Opulences.shop</p>
@@ -185,14 +198,14 @@ app.post("/create-checkout-session", async (req, res) => {
           quantity: 1,
         };
       }),
-      success_url: `${process.env.CLIENT_URL}/success`,
+      success_url: `${process.env.CLIENT_URL}/success/{CHECKOUT_SESSION_ID}`,
       cancel_url: `${process.env.CLIENT_URL}/`,
     });
 
     if (session) {
       req.session.transactionSuccessful = false;
     }
-    res.json({ url: session.url });
+    res.json({ id: session.id, url: session.url });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }

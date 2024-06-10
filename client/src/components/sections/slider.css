@@ -24,15 +24,18 @@
 }
 
 
-.container.fade-sides {
-    position: relative;
-    overflow: hidden;
+.fade-sides {
+  background: linear-gradient(90deg, #0E0E0E, #1F1F1F 90%, #1F1F1F 80%, #0E0E0E);
   }
 
-  .container.fade-sides::before,
+.card-bg {
+  background: linear-gradient(45deg, #0E0E0E, #1F1F1F 10%, #1F1F1F 70%, #0E0E0E);
+}
+
+  /* .container.fade-sides::before,
   .container.fade-sides::after {
     content: "";
-    position: absolute;
+   
     top: 0;
     width: 50px;
     height: 100%;
@@ -47,4 +50,4 @@
   .container.fade-sides::after {
     right: 0;
     background: linear-gradient(to left, #0E0E0E, #1F1F1F, transparent);
-  }
+  } */

@@ -5,10 +5,10 @@ const FadeIn = ({ children }: any) => {
     return (
         <AnimatePresence >
             <motion.div
-                initial={{ opacity: 0, scale: 0.5 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{
-                    duration: 0.8,
+                    duration: 1.8,
                     delay: 0.5,
                     ease: [0, 0.71, 0.2, 1.01]
                 }}
