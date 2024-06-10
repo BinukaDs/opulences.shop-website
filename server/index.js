@@ -22,9 +22,11 @@ app.use(
     origin: `https://opulences.vercel.app/`,
     methods: ["POST", "GET"],
     credentials: true,
-    headers: ["Content-Type"],
-
-
+    headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "POST,GET",
+    },
   })
 );
 
@@ -280,7 +282,7 @@ app.get("/success", (req, res) => {
 
 app.get("/", (req, res) => {
   res.send("Hello from server!");
-})
+});
 
 // app.use(bodyParser.raw());
 app.listen(3001);
