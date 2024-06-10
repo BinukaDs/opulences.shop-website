@@ -22,7 +22,7 @@ app.use(
     origin: `https://opulences.vercel.app/`,
     methods: ["POST", "GET"],
     credentials: true,
-    headers: { "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Credentials": true }
+    headers: ["Content-Type"],
 
 
   })
