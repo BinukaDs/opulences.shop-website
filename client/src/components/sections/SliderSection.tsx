@@ -36,9 +36,9 @@ const SliderSection = () => {
   }, [xTranslation, width]);
   return (
     <section className='w-full md:p-24 py-12 bg-background'>
-      <div className='container overflow-hidden ' >
+      <div className='container overflow-hidden' >
         <motion.div
-          className="flex items-center justify-between gap-12"
+          className="flex items-center justify-between gap-12 "
           ref={ref}
           style={{ x: xTranslation }}
         >

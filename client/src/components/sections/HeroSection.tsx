@@ -11,8 +11,8 @@ const HeroSection = () => {
                 <div className="md:flex hidden flex-col justify-between gap-6 h-full xl:px-24">
                     <div>
                         <TopicFade>
-                            <div className='px-32'>
-                                <h1 className='text-6xl text-center font-bold'>Build Your Dream Store <br /> With Us!</h1>
+                            <div className='px-32 flex flex-col justify-center items-center'>
+                                <h1 className='text-6xl text-center font-bold bg-gradient-to-r from-white via-gray-100 to-zinc-500 inline-block text-transparent bg-clip-text'>Build Your Dream Store <br /> With Us!</h1>
                                 <p className="text-textGray text-center py-5 xl:px-32">Lorem ipsum dolor sit amet consectetur. Blandit elementum proin sit egestas euismod. Cras amet nibh tempus <br /> pellentesque.</p>
                             </div>
                         </TopicFade>
@@ -43,9 +43,9 @@ const HeroSection = () => {
                     <div>
                         <div className=''>
 
-                            <h1 className='text-4xl text-center font-bold'>Build Your Dream Store, With Us!</h1>
+                            <h1 className='text-4xl text-center font-bold bg-gradient-to-r from-white via-gray-100 to-zinc-500 inline-block text-transparent bg-clip-text'>Build Your Dream Store, With Us!</h1>
                             <h1 className='text-4xl text-center font-bold mt-2'></h1>
-                            <p className="text-textGray text-center py-5">ipsum dolor sit amet consectetur. Blandit elementum proin sit egestas euismod. Cras amet nibh tempus pellentesque.</p>
+                            <p className="text-textGray text-center py-5">lorem ipsum dolor sit amet consectetur. Blandit elementum proin sit egestas euismod. Cras amet nibh tempus pellentesque.</p>
                         </div>
                         <div className='flex flex-col justify-center gap-6 items-center pb-10'>
                             <Link scroll={true} href="/#pricing" className="w-full">
