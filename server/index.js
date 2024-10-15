@@ -20,6 +20,7 @@ app.use(bodyParser.raw());
 app.use(
   cors({
     origin: "https://opulences-shop-website.vercel.app",
+  
   })
 );
 
@@ -205,8 +206,12 @@ app.post("/create-checkout-session", async (req, res) => {
     if (session) {
       req.session.transactionSuccessful = false;
     }
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
     res.json({ id: session.id, url: session.url });
   } catch (error) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
     res.status(500).json({ error: error.message });
   }
 });
@@ -267,12 +272,17 @@ app.get("/success", (req, res) => {
   if (!req.session.transactionSuccessful) {
     res.redirect("/"); // redirect to home page if the transaction was not successful
   } else {
+    
     req.session.transactionSuccessful = false;
     res.sendFile(path.join(__dirname, "success"));
   }
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
 });
 
 app.get("/", (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
   res.send("Hello from server!");
 });
 
