@@ -4,19 +4,19 @@ import { Button } from "../ui/button"
 import Image from "next/image"
 import TopicFade from "@/app/transitions/TopicFade"
 import FadeIn from "@/app/transitions/FadeIn"
-import dotenv from 'dotenv';
-import { useState } from "react"
-dotenv.config();
+import { useState, useEffect } from "react"
 import "./slider.css"
-import { tailspin } from 'ldrs'
-tailspin.register()
+import { PuffLoader } from 'react-spinners'
+import { useRouter } from 'next/navigation'
 
 const PricingSection = () => {
+
+    const router = useRouter()
     const [loadingStates, setLoadingStates] = useState({
         button1: false,
         button2: false,
     });
-    const BASEURL = "http://localhost:3001"
+    const BASEURL = process.env.NEXT_PUBLIC_BASE_URL
     const purchase = (e: any) => {
 
         let item: { id: number; price: number; name: string }[] = []
@@ -51,7 +51,7 @@ const PricingSection = () => {
             if (res.ok) return res.json()
             return res.json().then(json => Promise.reject(json))
         }).then(({ url }) => {
-            window.location = url
+            router.push(url)
             console.log(url)
         }).catch(error => {
             console.error(error)
@@ -117,19 +117,14 @@ const PricingSection = () => {
                                                 <Feature type={"regular"} text={"Human-made Professional Website"} />
                                                 <Feature type={"regular"} text={"30 Winning Products"} />
                                                 <Feature type={"regular"} text={"9 Niches to Select"} />
-                                                <Feature type={"regular"} text={"$50k+ Courses to help in your e-com journey"} />
+                                                <Feature type={"regular"} text={"$50k+ Courses to help in your journey"} />
                                             </div>
                                         </div>
                                     </CardContent>
                                     <CardFooter className="w-full flex flex-col justify-between items-center">
                                         <Button className="w-full text-lg" onClick={purchase} id="button1" disabled={loadingStates.button1}>{loadingStates.button1 ?
-                                                <l-tailspin
-                                                    size="32"
-                                                    stroke="5"
-                                                    speed="0.9"
-                                                    color="black"
-                                                ></l-tailspin> : "Purchase"
-                                            }</Button>
+                                            <PuffLoader size={40}/> : "Purchase"
+                                        }</Button>
                                         <div className="flex justify-center items-center gap-1 ">
                                             <p className="text-textMuted  text-xs">Powered By</p>
                                             <Image src={"/stripe.svg"} alt="web icon" width={30} height={30} />
@@ -161,19 +156,14 @@ const PricingSection = () => {
                                         <div className="flex flex-col justify-start py-10 gap-6">
                                             <Feature type={"advanced"} text={"Everything in the regular bundle"} />
                                             <Feature type={"advanced"} text={"40 Extra winning products"} />
-                                            <Feature type={"advanced"} text={"The real world E-com Complete Course"} />
+                                            <Feature type={"advanced"} text={"The real world E-com Course"} />
 
                                         </div>
                                     </CardContent>
                                     <CardFooter className="w-full flex flex-col justify-between items-center">
                                         <Button className="w-full bg-black hover:bg-black/80 text-white text-lg" onClick={purchase} id="button2" disabled={loadingStates.button2}>
                                             {loadingStates.button2 ?
-                                                <l-tailspin
-                                                    size="32"
-                                                    stroke="5"
-                                                    speed="0.9"
-                                                    color="white"
-                                                ></l-tailspin> : "Purchase"
+                                                <PuffLoader size={40} color="#FFF"/> : "Purchase"
                                             }</Button>
                                         <div className="flex justify-center items-center gap-1">
                                             <p className="text-textMuted  text-xs">Powered By</p>
