@@ -19,7 +19,7 @@ function generateSecret() {
 app.use(bodyParser.raw());
 app.use(
   cors({
-    origin: "*",
+    origin: "https://opulences-shop-website.vercel.app",
   })
 );
 
