@@ -6,7 +6,7 @@ import Link from "next/link"
 
 const HeroSection = () => {
     return (
-        <section className='h-full md:py-48 pt-48 flex items-center w-full bg-background border-b'>
+        <section className='h-full md:py-48 pt-48 flex items-center w-full bg-background border-b' id="top">
             <div className='container'>
                 <div className="md:flex hidden flex-col justify-between gap-6 h-full xl:px-24">
                     <div>

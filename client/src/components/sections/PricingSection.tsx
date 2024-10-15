@@ -5,19 +5,30 @@ import Image from "next/image"
 import TopicFade from "@/app/transitions/TopicFade"
 import FadeIn from "@/app/transitions/FadeIn"
 import dotenv from 'dotenv';
+import { useState } from "react"
 dotenv.config();
 import "./slider.css"
+import { tailspin } from 'ldrs'
+tailspin.register()
 
 const PricingSection = () => {
-    const BASEURL = "https://opulences-backend.vercel.app"
+    const [loadingStates, setLoadingStates] = useState({
+        button1: false,
+        button2: false,
+    });
+    const BASEURL = "http://localhost:3001"
     const purchase = (e: any) => {
+
         let item: { id: number; price: number; name: string }[] = []
         const id = e.target.id
-
-        if (id == 1) {
+        setLoadingStates((prevState) => ({
+            ...prevState,
+            [id]: true,
+        }));
+        if (id === "button1") {
             item = [{ id: 1, price: 70, name: 'Regular Bundle' }]
             console.log(item)
-        } else if (id == 2) {
+        } else if (id === "button2") {
             item = [{ id: 1, price: 140, name: 'Advanced Bundle' }]
             console.log(item)
         }
@@ -33,6 +44,10 @@ const PricingSection = () => {
                 item
             })
         }).then(res => {
+            setLoadingStates((prevState) => ({
+                ...prevState,
+                [id]: false,
+            }));
             if (res.ok) return res.json()
             return res.json().then(json => Promise.reject(json))
         }).then(({ url }) => {
@@ -107,7 +122,14 @@ const PricingSection = () => {
                                         </div>
                                     </CardContent>
                                     <CardFooter className="w-full flex flex-col justify-between items-center">
-                                        <Button className="w-full text-lg" onClick={purchase} id="1">Purchase</Button>
+                                        <Button className="w-full text-lg" onClick={purchase} id="button1" disabled={loadingStates.button1}>{loadingStates.button1 ?
+                                                <l-tailspin
+                                                    size="32"
+                                                    stroke="5"
+                                                    speed="0.9"
+                                                    color="black"
+                                                ></l-tailspin> : "Purchase"
+                                            }</Button>
                                         <div className="flex justify-center items-center gap-1 ">
                                             <p className="text-textMuted  text-xs">Powered By</p>
                                             <Image src={"/stripe.svg"} alt="web icon" width={30} height={30} />
@@ -144,7 +166,15 @@ const PricingSection = () => {
                                         </div>
                                     </CardContent>
                                     <CardFooter className="w-full flex flex-col justify-between items-center">
-                                        <Button className="w-full bg-black hover:bg-black/80 text-white text-lg" onClick={purchase} id="2">Purchase</Button>
+                                        <Button className="w-full bg-black hover:bg-black/80 text-white text-lg" onClick={purchase} id="button2" disabled={loadingStates.button2}>
+                                            {loadingStates.button2 ?
+                                                <l-tailspin
+                                                    size="32"
+                                                    stroke="5"
+                                                    speed="0.9"
+                                                    color="white"
+                                                ></l-tailspin> : "Purchase"
+                                            }</Button>
                                         <div className="flex justify-center items-center gap-1">
                                             <p className="text-textMuted  text-xs">Powered By</p>
                                             <Image src={"/stripe-black.svg"} alt="web icon" width={30} height={30} />
