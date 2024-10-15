@@ -41,6 +41,7 @@ const PricingSection = () => {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin': '*'
             },
+            cache: 'no-store',
             body: JSON.stringify({
                 item
             })
