@@ -18,16 +18,13 @@ function generateSecret() {
 
 app.use(bodyParser.raw());
 app.use(
-  cors({
-    origin: `https://opulences.vercel.app/`,
-    methods: ["POST", "GET"],
-    credentials: true,
-    headers: {
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "POST,GET",
+  cors(
+    {
+      origin: CLIENT_URL,
+      credentials: true,
     },
-  })
+    bodyParser.json
+  )
 );
 
 app.use(
@@ -35,7 +32,7 @@ app.use(
     secret: generateSecret(),
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: false }, // set to true if you're using https
+    cookie: { secure: false },
   })
 );
 
@@ -222,6 +219,7 @@ app.post(
   "/webhook",
   bodyParser.raw({ type: "application/json" }),
   async (req, res) => {
+    console.log("webhook hit!");
     let event;
     const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET;
     // Verify the event came from Stripe
@@ -259,12 +257,11 @@ app.post(
         );
       }
     } catch (err) {
-      // On error, log and return the error message
+      
       console.log(`❌ Error message: ${err.message}`);
       return res.status(400).send(`Webhook Error: ${err.message}`);
     }
 
-    // Successfully constructed event
     console.log("✅ Success:", event.id);
     res.json({ received: true });
   }
@@ -275,8 +272,8 @@ app.get("/success", (req, res) => {
   if (!req.session.transactionSuccessful) {
     res.redirect("/"); // redirect to home page if the transaction was not successful
   } else {
-    req.session.transactionSuccessful = false; // reset the variable
-    res.sendFile(path.join(__dirname, "success")); // send the success page
+    req.session.transactionSuccessful = false; 
+    res.sendFile(path.join(__dirname, "success")); 
   }
 });
 
