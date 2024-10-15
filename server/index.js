@@ -17,7 +17,11 @@ function generateSecret() {
 }
 
 app.use(bodyParser.raw());
-app.use(cors());
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 
 app.use(
   session({
