@@ -20,8 +20,7 @@ app.use(bodyParser.raw());
 app.use(
   cors(
     {
-      origin: CLIENT_URL,
-      credentials: true,
+      origin: true,
     },
     bodyParser.json
   )
@@ -257,7 +256,6 @@ app.post(
         );
       }
     } catch (err) {
-      
       console.log(`❌ Error message: ${err.message}`);
       return res.status(400).send(`Webhook Error: ${err.message}`);
     }
@@ -272,8 +270,8 @@ app.get("/success", (req, res) => {
   if (!req.session.transactionSuccessful) {
     res.redirect("/"); // redirect to home page if the transaction was not successful
   } else {
-    req.session.transactionSuccessful = false; 
-    res.sendFile(path.join(__dirname, "success")); 
+    req.session.transactionSuccessful = false;
+    res.sendFile(path.join(__dirname, "success"));
   }
 });
 
