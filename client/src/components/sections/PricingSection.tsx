@@ -4,7 +4,7 @@ import { Button } from "../ui/button"
 import Image from "next/image"
 import TopicFade from "@/app/transitions/TopicFade"
 import FadeIn from "@/app/transitions/FadeIn"
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import "./slider.css"
 import { PuffLoader } from 'react-spinners'
 import { useRouter } from 'next/navigation'
@@ -38,7 +38,8 @@ const PricingSection = () => {
         fetch(`${BASEURL}/create-checkout-session/`, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
             },
             body: JSON.stringify({
                 item
@@ -55,6 +56,10 @@ const PricingSection = () => {
             console.log(url)
         }).catch(error => {
             console.error(error)
+            setLoadingStates((prevState) => ({
+                ...prevState,
+                [id]: false,
+            }));
         })
     }
 
@@ -123,7 +128,7 @@ const PricingSection = () => {
                                     </CardContent>
                                     <CardFooter className="w-full flex flex-col justify-between items-center">
                                         <Button className="w-full text-lg" onClick={purchase} id="button1" disabled={loadingStates.button1}>{loadingStates.button1 ?
-                                            <PuffLoader size={40}/> : "Purchase"
+                                            <PuffLoader size={40} /> : "Purchase"
                                         }</Button>
                                         <div className="flex justify-center items-center gap-1 ">
                                             <p className="text-textMuted  text-xs">Powered By</p>
@@ -163,7 +168,7 @@ const PricingSection = () => {
                                     <CardFooter className="w-full flex flex-col justify-between items-center">
                                         <Button className="w-full bg-black hover:bg-black/80 text-white text-lg" onClick={purchase} id="button2" disabled={loadingStates.button2}>
                                             {loadingStates.button2 ?
-                                                <PuffLoader size={40} color="#FFF"/> : "Purchase"
+                                                <PuffLoader size={40} color="#FFF" /> : "Purchase"
                                             }</Button>
                                         <div className="flex justify-center items-center gap-1">
                                             <p className="text-textMuted  text-xs">Powered By</p>
