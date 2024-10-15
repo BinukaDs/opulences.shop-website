@@ -17,7 +17,7 @@ function generateSecret() {
 }
 
 app.use(bodyParser.raw());
-app.use(cors({ origin: true }));
+app.use(cors());
 
 app.use(
   session({
