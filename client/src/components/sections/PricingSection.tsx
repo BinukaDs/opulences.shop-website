@@ -39,7 +39,6 @@ const PricingSection = () => {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*'
             },
             cache: 'no-store',
             body: JSON.stringify({

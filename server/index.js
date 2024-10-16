@@ -27,7 +27,9 @@ app.use(bodyParser.raw());
 app.use(
   cors({
     origin: "https://opulences-shop-website.vercel.app",
-  
+    methods: "GET , POST",
+    credentials: true,
+
   })
 );
 
@@ -213,7 +215,7 @@ app.post("/create-checkout-session", async (req, res) => {
     if (session) {
       req.session.transactionSuccessful = false;
     }
-    res.json({ id: session.id, url: session.url });
+    res.status(200).json({ id: session.id, url: session.url });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
@@ -251,7 +253,7 @@ app.post(
         console.log("Customer created: ", customer.id);
         console.log("Product: ", product);
         console.log("Amount: ", amount);
-        sendMail(
+        await sendMail(
           {
             to: email,
             name: name,
