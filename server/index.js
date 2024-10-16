@@ -26,7 +26,7 @@ app.all('*', function(req, res, next) {
 app.use(bodyParser.raw());
 app.use(
   cors({
-    origin: "https://opulences-shop-website.vercel.app",
+    origin: "*",
     methods: "GET , POST",
     credentials: true,
 
