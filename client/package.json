@@ -19,6 +19,7 @@
     "ldrs": "^1.0.2",
     "lucide-react": "^0.378.0",
     "next": "^14.2.15",
+    "nextjs-cors": "^2.2.0",
     "react": "19.0.0-rc-19bd26be-20240815",
     "react-dom": "19.0.0-rc-19bd26be-20240815",
     "react-loader-spinner": "^6.1.6",
