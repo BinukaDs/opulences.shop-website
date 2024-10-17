@@ -16,8 +16,6 @@ function generateSecret() {
   return crypto.randomBytes(64).toString("hex");
 }
 
-
-
 app.use(bodyParser.raw());
 app.use(
   cors({
@@ -209,7 +207,8 @@ app.post("/create-checkout-session", async (req, res) => {
     if (session) {
       req.session.transactionSuccessful = false;
     }
-    res.status(200).json({ id: session.id, url: session.url });
+    
+    res.setHeader({ "Access-Control-Allow-Origin": `${CLIENT_URL}` }).status(200).json({ id: session.id, url: session.url });
     // new Response(JSON.stringify({ id: session.id, url: session.url }), {
     //   headers: {
     //     "Access-Control-Allow-Origin": "*",

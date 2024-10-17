@@ -18,7 +18,7 @@ const PricingSection = () => {
         button2: false,
     });
     const BASEURL = process.env.NEXT_PUBLIC_BASE_URL
-   
+
     const purchase = (e: any) => {
 
         let item: { id: number; price: number; name: string }[] = []
@@ -41,7 +41,7 @@ const PricingSection = () => {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Allow-Control-Allow-Origin': '*',
+                'Allow-Control-Allow-Origin': `${BASEURL}`,
             },
             cache: 'no-store',
             body: JSON.stringify({
@@ -52,7 +52,10 @@ const PricingSection = () => {
                 ...prevState,
                 [id]: false,
             }));
-            if (res.ok) return res.json()
+            if (res.ok){
+                console.log(res)
+                return res.json()
+            }
             return res.json().then(json => Promise.reject(json))
         }).then(({ url }) => {
             router.push(url)
