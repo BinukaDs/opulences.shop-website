@@ -16,20 +16,14 @@ function generateSecret() {
   return crypto.randomBytes(64).toString("hex");
 }
 
-app.all('*', function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "X-Requested-With");
-  res.header('Access-Control-Allow-Headers', 'Content-Type');
-  next();
-});
+
 
 app.use(bodyParser.raw());
 app.use(
   cors({
-    origin: "*",
+    origin: CLIENT_URL,
     methods: "GET , POST",
     credentials: true,
-
   })
 );
 
@@ -216,6 +210,11 @@ app.post("/create-checkout-session", async (req, res) => {
       req.session.transactionSuccessful = false;
     }
     res.status(200).json({ id: session.id, url: session.url });
+    // new Response(JSON.stringify({ id: session.id, url: session.url }), {
+    //   headers: {
+    //     "Access-Control-Allow-Origin": "*",
+    //   },
+    // });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
