@@ -1,6 +1,5 @@
 'use client'
 import { Card, CardContent, CardHeader, CardDescription, CardTitle, CardFooter } from "../ui/card"
-
 import { Button } from "../ui/button"
 import Image from "next/image"
 import TopicFade from "@/app/transitions/TopicFade"
@@ -41,7 +40,6 @@ const PricingSection = () => {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Allow-Control-Allow-Origin': `${BASEURL}`,
             },
             cache: 'no-store',
             body: JSON.stringify({
