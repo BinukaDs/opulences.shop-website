@@ -16,7 +16,7 @@ function generateSecret() {
   return crypto.randomBytes(64).toString("hex");
 }
 
-app.use(bodyParser.raw({}));
+app.use(bodyParser.raw({type: 'application/json'}));
 app.use(
   cors({
     origin: CLIENT_URL,
@@ -225,7 +225,7 @@ app.post(
   async (req, res) => {
     console.log("webhook hit!");
     let event;
-    const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET;
+    const endpointSecret = process.env.STRIPE_WEBHOOK_SIGNING_SECRET;
     // Verify the event came from Stripe
     const sig = req.headers["stripe-signature"];
     try {
