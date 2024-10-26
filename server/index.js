@@ -2,8 +2,8 @@ require("dotenv").config();
 
 const express = require("express");
 const app = express();
+const bodyParser = require('body-parser');
 const session = require("express-session");
-const bodyParser = require("body-parser");
 const Buffer = require("buffer");
 const stripe = require("stripe")(process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY);
 const cors = require("cors");
@@ -16,7 +16,7 @@ function generateSecret() {
   return crypto.randomBytes(64).toString("hex");
 }
 
-app.use(bodyParser.raw());
+app.use(bodyParser.raw({}));
 app.use(
   cors({
     origin: CLIENT_URL,
@@ -221,14 +221,14 @@ app.post("/create-checkout-session", async (req, res) => {
 
 app.post(
   "/webhook",
-  bodyParser.raw({ type: "application/json" }),
+  express.raw({type: 'application/json'}),
   async (req, res) => {
     console.log("webhook hit!");
     let event;
     const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET;
     // Verify the event came from Stripe
+    const sig = req.headers["stripe-signature"];
     try {
-      const sig = req.headers["stripe-signature"];
       event = stripe.webhooks.constructEvent(req.body, sig, endpointSecret);
       if (event.type === "checkout.session.completed") {
         const session = event.data.object;
