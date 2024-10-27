@@ -16,7 +16,7 @@ function generateSecret() {
   return crypto.randomBytes(64).toString("hex");
 }
 
-app.use(bodyParser.raw({type: 'application/json'}));
+app.use(bodyParser.raw());
 app.use(
   cors({
     origin: CLIENT_URL,
