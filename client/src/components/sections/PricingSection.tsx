@@ -28,10 +28,10 @@ const PricingSection = () => {
         }));
         if (id === "button1") {
             item = [{ id: 1, price: 70, name: 'Regular Bundle' }]
-            console.log(item)
+            // console.log(item)
         } else if (id === "button2") {
             item = [{ id: 1, price: 140, name: 'Advanced Bundle' }]
-            console.log(item)
+            // console.log(item)
         }
 
         console.log("BaseURL: ", BASEURL)
